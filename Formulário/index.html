@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Serviço</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <form id="serviceForm" class="needs-validation" novalidate>
+            <fieldset class="border p-4">
+                <h1 class = "form-header">Formulário de Serviço</h1>
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                    <div class="invalid-feedback">Por favor, insira seu nome.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="sobrenome" class="form-label">Sobrenome</label>
+                    <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+                    <div class="invalid-feedback">Por favor, insira seu sobrenome.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone" name="telefone" pattern="\(\d{2}\)\s\d{4,5}-\d{4}" placeholder="(XX) XXXXX-XXXX" required>
+                    <div class="invalid-feedback">Por favor, insira um telefone válido no formato (XX) XXXXX-XXXX.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                    <div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="mensagem" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="mensagem" name="mensagem" rows="3" required></textarea>
+                    <div class="invalid-feedback">Por favor, insira uma mensagem.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="lingua" class="form-label">Língua</label>
+                    <select class="form-select" id="lingua" name="lingua" required>
+                        <option value="" disabled selected>Selecione uma língua</option>
+                        <option value="ingles">Inglês</option>
+                        <option value="espanhol">Espanhol</option>
+                        <option value="frances">Francês</option>
+                        <option value="portugues">Português (pt-br)</option>
+                    </select>
+                    <div class="invalid-feedback">Por favor, selecione uma língua.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="arquivo" class="form-label">Upload de Arquivo</label>
+                    <input type="file" class="form-control" id="arquivo" name="arquivo" accept=".pdf, .doc, .docx, .jpeg, .jpg, .png" required>
+                    <div class="invalid-feedback">Por favor, faça upload de um arquivo nos formatos permitidos.</div>
+                </div>
+                <!-- Lista de Linguagens Preferidas -->
+                <div class="mb-3">
+                    <label for="linguagens" class="form-label">Linguagens Preferidas</label>
+                    <select class="form-select" id="linguagens" name="linguagens" multiple required>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                        <option value="java">Java</option>
+                        <option value="csharp">C#</option>
+                        <option value="php">PHP</option>
+                    </select>
+                    <div class="invalid-feedback">Por favor, selecione pelo menos uma linguagem.</div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Banco de Dados Recomendado</label>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="mysql" name="banco" value="mysql" required>
+                        <label class="form-check-label" for="mysql">MySQL</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="postgresql" name="banco" value="postgresql" required>
+                        <label class="form-check-label" for="postgresql">PostgreSQL</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" class="form-check-input" id="mongodb" name="banco" value="mongodb" required>
+                        <label class="form-check-label" for="mongodb">MongoDB</label>
+                    </div>
+                    <div class="invalid-feedback">Por favor, selecione um banco de dados.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="turno" class="form-label">Turno Preferido</label>
+                    <select class="form-select" id="turno" name="turno" required>
+                        <option value="" disabled selected>Selecione um turno</option>
+                        <option value="manha">Manhã</option>
+                        <option value="tarde">Tarde</option>
+                        <option value="noite">Noite</option>
+                    </select>
+                    <div class="invalid-feedback">Por favor, selecione um turno.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="hora" class="form-label">Melhor Horário</label>
+                    <input type="time" class="form-control" id="hora" name="hora" required>
+                    <div class="invalid-feedback">Por favor, insira um horário.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="data" class="form-label">Previsão de Entrega</label>
+                    <input type="date" class="form-control" id="data" name="data" required>
+                    <div class="invalid-feedback">Por favor, insira uma data.</div>
+                </div>
+                <div class="mb-3">
+                    <button type="reset" class="btn btn-secondary">Limpar</button>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+            var forms = document.querySelectorAll('.needs-validation');
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+    </script>
+</body>
+</html>
